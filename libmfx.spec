@@ -14,6 +14,7 @@ BuildRequires: gcc-c++
 BuildRequires: libdrm-devel
 BuildRequires: libtool
 BuildRequires: libva-devel
+ExclusiveArch: %{ix86} x86_64
 
 %description
 The dispatcher is a layer that lies between applications and Intel Media SDK
