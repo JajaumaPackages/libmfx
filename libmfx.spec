@@ -1,12 +1,12 @@
-%global commit 7adf2e463149adf6820de745a4d9e5d9a1ba8763
+%global commit a5ba231e17670b5586c1760b65871cd0844f1b30
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global date 20160317
+%global date 20170114
 %global abi 0
 
 Name: libmfx
 Summary: Intel hardware video acceleration dispatcher library
-Version: 1.16
-Release: 2.%{date}git%{shortcommit}%{?dist}
+Version: 1.19
+Release: 1.%{date}git%{shortcommit}%{?dist}
 URL:     https://github.com/lu-zero/mfx_dispatch
 Source0: https://github.com/lu-zero/mfx_dispatch/archive/%{commit}/mfx_dispatch-%{commit}.tar.gz
 License: BSD
@@ -63,6 +63,9 @@ rm %{buildroot}%{_libdir}/libmfx.la
 %{_libdir}/libmfx.so
 
 %changelog
+* Tue Feb 14 2017 Dominik Mierzejewski <rpm@greysector.net> - 1.19-1.20170114gita5ba231
+- update to 1.19 release
+
 * Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.16-2.20160317git7adf2e4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
