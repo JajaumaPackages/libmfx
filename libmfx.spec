@@ -1,14 +1,14 @@
-%global commit a5ba231e17670b5586c1760b65871cd0844f1b30
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global date 20170114
+#global commit e6fc25c974839dcbcf483edee01f51142ddc74f3
+#global shortcommit %(c=%{commit}; echo ${c:0:7})
+#global date 20170322
 %global abi 0
 
 Name: libmfx
 Summary: Intel hardware video acceleration dispatcher library
-Version: 1.19
-Release: 1.%{date}git%{shortcommit}%{?dist}
+Version: 1.21
+Release: 1%{?dist}
 URL:     https://github.com/lu-zero/mfx_dispatch
-Source0: https://github.com/lu-zero/mfx_dispatch/archive/%{commit}/mfx_dispatch-%{commit}.tar.gz
+Source0: https://github.com/lu-zero/mfx_dispatch/archive/%{version}.tar.gz#/libmfx-%{version}.tar.gz
 License: BSD
 BuildRequires: gcc-c++
 BuildRequires: libdrm-devel
@@ -37,7 +37,7 @@ calls to the same functions in the selected SDK implementation.
 This package contains the development files.
 
 %prep
-%setup -q -n mfx_dispatch-%{commit}
+%setup -q -n mfx_dispatch-%{version}
 chmod 644 mfx/*.h
 autoreconf -vif
 
@@ -63,6 +63,9 @@ rm %{buildroot}%{_libdir}/libmfx.la
 %{_libdir}/libmfx.so
 
 %changelog
+* Sun Mar 26 2017 Dominik Mierzejewski <rpm@greysector.net> - 1.21-1.20170322gite6fc25c
+- update to 1.21
+
 * Tue Feb 14 2017 Dominik Mierzejewski <rpm@greysector.net> - 1.19-1.20170114gita5ba231
 - update to 1.19 release
 
